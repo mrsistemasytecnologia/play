@@ -70,10 +70,4 @@
 		<name>MR Sistemas y Tecnolog?a</name>
 		<url>www.mrsistemas.net</url>
 	</organization>
-	<modules>
-		<module>PlayAPI</module>
-		<module>PlayEAR</module>
-		<module>PlayEJB</module>
-		<module>PlayREST</module>
-	</modules>
 </project>
