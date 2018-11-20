@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>net.mrsistemas</groupId>
+	<artifactId>play</artifactId>
+	<version>1.0.0</version>
+	<packaging>pom</packaging>
+
+
+	<properties>
+		<cors-filtering.version>2.6</cors-filtering.version>
+		<jackson-core.version>2.9.5</jackson-core.version>
+		<java.version>1.8</java.version>
+		<google-gson.version>2.8.5</google-gson.version>
+		<endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<jackson.version>1.9.13</jackson.version>
+		<stormpath.version>1.0.RC2</stormpath.version>
+		<servlet.version>3.1.0</servlet.version>
+		<rs-api.version>2.1</rs-api.version>
+		<loggin.version>1.2.17</loggin.version>
+		<javax.servlet.version>3.1.0</javax.servlet.version>
+		<javax.annotation.api.version>1.2-b02</javax.annotation.api.version>
+		<jersey.client.version>2.27</jersey.client.version>
+		<jersey.common.version>2.27</jersey.common.version>
+		<jersey.container.servlet.version>2.10</jersey.container.servlet.version>
+		<jersey.media.json.version>2.11</jersey.media.json.version>
+		<timezone.gmt.version>-5</timezone.gmt.version>
+		<maven.compiler.plugin.version>3.8.0</maven.compiler.plugin.version>
+		<maven.war.plugin.version>2.3</maven.war.plugin.version>
+		<maven.dependency.plugin.version>3.1.1</maven.dependency.plugin.version>		
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>${loggin.version}</version>
+			<scope>compile</scope>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core -->
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-core</artifactId>
+			<version>2.9.1</version>
+			<scope>compile</scope>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-api -->
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-api</artifactId>
+			<version>2.9.1</version>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-web</artifactId>
+			<version>2.9.1</version>
+			<scope>compile</scope>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/log4j/log4j -->
+
+	</dependencies>
+
+	<name>Play - IOT</name>
+	<url>www.mrsistemas.net/play</url>
+	<description>Proyecto desarrollado para el grado de magister en ingenieria del software,  en el que se construye una plaicai?n para la gesti?n de dispositivos y herramientas mediante una aplicaci?n web m?vil con IOT.</description>
+	<organization>
+		<name>MR Sistemas y Tecnolog?a</name>
+		<url>www.mrsistemas.net</url>
+	</organization>
+	<modules>
+		<module>PlayAPI</module>
+		<module>PlayEAR</module>
+		<module>PlayEJB</module>
+		<module>PlayREST</module>
+	</modules>
+</project>

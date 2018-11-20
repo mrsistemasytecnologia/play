@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+	id="WebApp_ID" version="3.1">
+	<display-name>MRServiceRS</display-name>
+
+	<servlet>
+		<servlet-name>MRServiceRServlet</servlet-name>
+		<servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class>
+		<init-param>
+			<param-name>jersey.config.server.provider.packages</param-name>
+			<param-value>net.mrsistemas.play.rs.server;org.codehaus.jackson.jaxrs</param-value>
+		</init-param>
+		<init-param>
+			<param-name>com.sun.jersey.api.json.POJOMappingFeature</param-name>
+			<param-value>true</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>MRServiceRServlet</servlet-name>
+		<url-pattern>/rest/*</url-pattern>
+	</servlet-mapping>
+
+	<filter>
+		<filter-name>CORS</filter-name>
+		<filter-class>com.thetransactioncompany.cors.CORSFilter</filter-class>
+		<init-param>
+			<param-name>cors.allowGenericHttpRequests</param-name>
+			<param-value>true</param-value>
+		</init-param>
+		<init-param>
+			<param-name>cors.allowOrigin</param-name>
+			<param-value>http://localhost:4200</param-value>
+		</init-param>
+		<init-param>
+			<param-name>cors.allowSubdomains</param-name>
+			<param-value>true</param-value>
+		</init-param>
+		<init-param>
+			<param-name>cors.supportedMethods</param-name>
+			<param-value>GET, HEAD, POST, PUT, DELETE, OPTIONS</param-value>
+		</init-param>
+<!-- 		<init-param> -->
+<!-- 			<param-name>cors.supportedHeaders</param-name> -->
+<!-- 			<param-value>origin, authorization, x-file-size, x-file-name, content-type, accept, x-file-type</param-value> -->
+<!-- 		</init-param> -->
+		<init-param>
+			<param-name>cors.supportsCredentials</param-name>
+			<param-value>true</param-value>
+		</init-param>
+		<init-param>
+			<param-name>cors.maxAge</param-name>
+			<param-value>3600</param-value>
+		</init-param>
+	</filter>
+
+	<!-- CORS Filter Mappings Begin -->
+	<filter-mapping>
+		<filter-name>CORS</filter-name>
+		<url-pattern>/api/*</url-pattern>
+		<url-pattern>/rest/*</url-pattern>
+		<url-pattern>/service/*</url-pattern>
+		<url-pattern>/rest/rs/*</url-pattern>
+	</filter-mapping>
+	<!-- CORS Filter Mappings End -->
+
+</web-app>
